@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SwCard from "./swCards";
 import { Container, Row } from "reactstrap";
+import styled from "styled-components";
+
+const Background = styled.div`
+  background-color: gray;
+  border: solid 3px black;
+`;
 
 export default function StarWars() {
   const [characters, setCharacters] = useState([]);
@@ -26,7 +32,7 @@ export default function StarWars() {
 
           console.log(item.mass);
           return (
-            <div>
+            <Background>
               <div class="row">
                 <div class="col">
                   <SwCard
@@ -36,7 +42,7 @@ export default function StarWars() {
                   />
                 </div>
               </div>
-            </div>
+            </Background>
           );
         })}
       </Row>
